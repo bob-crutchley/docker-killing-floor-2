@@ -1,0 +1,3 @@
+#!/bin/bash
+/steam/steamcmd.sh +runscript /steam/install.steamcmd
+/killing-floor-2/Binaries/Win64/KFGameSteamServer.bin.x86_64
