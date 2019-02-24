@@ -1,4 +1,4 @@
 login anonymous
-force_install_dir /killing-floor-2
+force_install_dir /home/steam/killing-floor-2
 app_update 232130 validate
 exit
