@@ -1,5 +1,5 @@
 #!/bin/bash
-/steam/steamcmd.sh +runscript /steam/install.steamcmd
+/home/steam/steamcmd.sh +runscript /home/steam/install.steamcmd
 
 server_install_path="/home/steam/killing-floor-2"
 

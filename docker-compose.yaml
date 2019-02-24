@@ -1,6 +1,6 @@
 version: '3.7'
 services:
-  kf2:
+  killing-floor-2:
     image: bobcrutchley/killing-floor-2:latest
     build: .
     container_name: killing-floor-2
