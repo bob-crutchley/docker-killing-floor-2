@@ -1,0 +1,32 @@
+version: '3.7'
+services:
+  kf2:
+    image: bobcrutchley/killing-floor-2:latest
+    build: .
+    container_name: killing-floor-2
+    ports:
+    - target: 27015
+      published: 27015
+      protocol: udp
+    - target: 7777
+      published: 7777
+      protocol: udp
+    - target: 8080
+      published: 8080
+      protocol: tcp
+    volumes:
+    - type: volume
+      source: killing-floor-2
+      target: /killing-floor-2
+  # expose the web console as a hideen service on tor
+  tor:
+    container_name: kf2-web-console-tor
+    image: bobcrutchley/tor-service
+    environment:
+    - HIDDEN_SERVICE_HOST="killing-floor-2"
+    - HIDDEN_SERVICE_PORT="8080"
+    depends_on:
+    - killing-floor-2
+volumes:
+  killing-floor-2:
+
