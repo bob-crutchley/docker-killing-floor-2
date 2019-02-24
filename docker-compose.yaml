@@ -23,8 +23,8 @@ services:
     container_name: kf2-web-console-tor
     image: bobcrutchley/tor-service
     environment:
-    - HIDDEN_SERVICE_HOST="killing-floor-2"
-    - HIDDEN_SERVICE_PORT="8080"
+    - HIDDEN_SERVICE_HOST=killing-floor-2
+    - HIDDEN_SERVICE_PORT=8080
     depends_on:
     - killing-floor-2
 volumes:

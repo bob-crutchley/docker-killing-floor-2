@@ -1,15 +1,16 @@
 #!/bin/bash
+server_install_path="/home/steam/killing-floor-2"
 /home/steam/steamcmd.sh +runscript /home/steam/install.steamcmd
 
-server_install_path="/home/steam/killing-floor-2"
-
 # configure passwords (default changeme)
-kfgame="${server_install_path}/KFGame/Config/LinuxServer-KFGame.ini"
-sed -i 's/AdminPassword=/AdminPassword=changeme/g' ${kfgame}
-sed -i 's/GamePassword=/GamePassword=changeme/g' ${kfgame}
+default_kfgame="${server_install_path}/KFGame/Config/DefaultGame.ini"
+linux_kfgame="${server_install_path}/KFGame/Config/LinuxServer-KFGame.ini"
+cp ${default_kfgame} ${linux_kfgame}
+sed -i 's/AdminPassword=/AdminPassword=changeme/g' ${linux_kfgame}
+sed -i 's/GamePassword=/GamePassword=changeme/g' ${linux_kfgame}
 
 # enable web console
-kfweb="${server_install_path}/KFGame/Config/KFWeb.ini"
+kfweb="${server_install_path}/KFGame/Config/DefaultWeb.ini"
 sed -i 's/bEnabled=false/bEnabled=true/g' ${kfweb}
 
 # start the server
