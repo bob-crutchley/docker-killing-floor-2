@@ -17,7 +17,7 @@ services:
     volumes:
     - type: volume
       source: killing-floor-2
-      target: /killing-floor-2
+      target: /home/steam/killing-floor-2
   # expose the web console as a hideen service on tor
   tor:
     container_name: kf2-web-console-tor
